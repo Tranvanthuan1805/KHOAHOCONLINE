@@ -1,517 +1,418 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>TechLearn Pro - Khóa Học IT Chuyên Nghiệp</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Background Animation Canvas -->
-    <canvas id="bgCanvas"></canvas>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <i class="fas fa-code"></i>
-          <span>TechLearn Pro</span>
-        </div>
-        <ul class="nav-menu">
-          <li><a href="#home">Trang chủ</a></li>
-          <li><a href="#courses">Khóa học</a></li>
-          <li><a href="#about">Về chúng tôi</a></li>
-          <li><a href="#contact">Liên hệ với chúng tôi</a></li>
-        </ul>
-        <div class="nav-controls">
-          <div class="datetime-display">
-            <span id="current-time"></span>
-            <span id="current-date"></span>
-          </div>
-          <button id="theme-toggle" class="theme-toggle">
-            <i class="fas fa-moon"></i>
-          </button>
-          <div class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            <span class="highlight">Nâng cao trình độ</span> kỹ năng IT<br />
-            của bạn với các khóa học<br />
-            <span class="highlight">chuyên nghiệp</span>
-          </h1>
-          <p class="hero-description">
-            Học từ các chuyên gia hàng đầu với phương pháp thực hành hiệu quả.
-            Tham gia cùng hơn 10,000+ học viên đã thành công.
-          </p>
-          <div class="hero-buttons">
-            <button class="btn btn-primary">
-              <i class="fas fa-play"></i>
-              Khám phá khóa học
-            </button>
-            <button class="btn btn-secondary">
-              <i class="fas fa-download"></i>
-              Tải brochure
-            </button>
-          </div>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number" data-count="50">0</span>
-            <span class="stat-label">Khóa học</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="10000">0</span>
-            <span class="stat-label">Học viên</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="98">0</span>
-            <span class="stat-label">% Hài lòng</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="courses">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Khóa học nổi bật</h2>
-          <p class="section-subtitle">
-            Lựa chọn khóa học phù hợp với mục tiêu của bạn
-          </p>
-        </div>
-
-        <div class="course-grid">
-          <!-- Course 1 -->
-          <div class="course-card">
-            <div class="course-image">
-              <i class="fab fa-js-square"></i>
-              <div class="course-badge">Bestseller</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuần Lại Lập Trình - Học lập trình từ cơ bản đến nâng cao</title>
+    <meta name="description" content="Nền tảng học lập trình trực tuyến hàng đầu Việt Nam. Học Frontend, Backend, Mobile, DevOps với giảng viên chuyên nghiệp. Hơn 100 khóa học từ miễn phí đến Pro.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://thuanlailaptrinh.com/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Thuần Lại Lập Trình - Học lập trình từ cơ bản đến nâng cao">
+    <meta property="og:description" content="Nền tảng học lập trình trực tuyến hàng đầu Việt Nam. Học Frontend, Backend, Mobile, DevOps với giảng viên chuyên nghiệp.">
+    <meta property="og:image" content="https://thuanlailaptrinh.com/assets/og-image.jpg">
+    <meta property="og:url" content="https://thuanlailaptrinh.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Thuần Lại Lập Trình">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thuần Lại Lập Trình - Học lập trình từ cơ bản đến nâng cao">
+    <meta name="twitter:description" content="Nền tảng học lập trình trực tuyến hàng đầu Việt Nam. Học Frontend, Backend, Mobile, DevOps với giảng viên chuyên nghiệp.">
+    <meta name="twitter:image" content="https://thuanlailaptrinh.com/assets/og-image.jpg">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__brand">
+                <a href="index.html" class="logo" aria-label="Thuần Lại Lập Trình - Trang chủ">
+                    Thuần Lại Lập Trình
+                </a>
+                <p class="slogan">Nơi khởi đầu sự nghiệp lập trình của bạn</p>
             </div>
-            <div class="course-content">
-              <h3>JavaScript Toàn Tập</h3>
-              <p>
-                Từ cơ bản đến nâng cao, làm chủ JavaScript và các framework hiện
-                đại
-              </p>
-              <div class="course-meta">
-                <span><i class="fas fa-clock"></i> 40 giờ</span>
-                <span><i class="fas fa-users"></i> 1,250 học viên</span>
-                <span class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  4.9
-                </span>
-              </div>
-              <div class="course-price">
-                <span class="original-price">2,500,000₫</span>
-                <span class="current-price">1,890,000₫</span>
-              </div>
-              <button class="btn-course">Đăng ký ngay</button>
-            </div>
-          </div>
-
-          <!-- Course 2 -->
-          <div class="course-card">
-            <div class="course-image">
-              <i class="fab fa-react"></i>
-              <div class="course-badge">Mới</div>
-            </div>
-            <div class="course-content">
-              <h3>React.js Chuyên Sâu</h3>
-              <p>
-                Xây dựng ứng dụng web hiện đại với React.js, Redux và Next.js
-              </p>
-              <div class="course-meta">
-                <span><i class="fas fa-clock"></i> 35 giờ</span>
-                <span><i class="fas fa-users"></i> 890 học viên</span>
-                <span class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  4.8
-                </span>
-              </div>
-              <div class="course-price">
-                <span class="original-price">2,800,000₫</span>
-                <span class="current-price">2,190,000₫</span>
-              </div>
-              <button class="btn-course">Đăng ký ngay</button>
-            </div>
-          </div>
-
-          <!-- Course 3 -->
-          <div class="course-card">
-            <div class="course-image">
-              <i class="fab fa-python"></i>
-              <div class="course-badge">Hot</div>
-            </div>
-            <div class="course-content">
-              <h3>Python & AI/ML</h3>
-              <p>
-                Lập trình Python và ứng dụng trong Machine Learning, Data
-                Science
-              </p>
-              <div class="course-meta">
-                <span><i class="fas fa-clock"></i> 50 giờ</span>
-                <span><i class="fas fa-users"></i> 2,100 học viên</span>
-                <span class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  4.9
-                </span>
-              </div>
-              <div class="course-price">
-                <span class="original-price">3,200,000₫</span>
-                <span class="current-price">2,490,000₫</span>
-              </div>
-              <button class="btn-course">Đăng ký ngay</button>
-            </div>
-          </div>
-
-          <!-- Course 4 -->
-          <div class="course-card">
-            <div class="course-image">
-              <i class="fab fa-node-js"></i>
-            </div>
-            <div class="course-content">
-              <h3>Node.js Backend</h3>
-              <p>Phát triển API và ứng dụng backend mạnh mẽ với Node.js</p>
-              <div class="course-meta">
-                <span><i class="fas fa-clock"></i> 30 giờ</span>
-                <span><i class="fas fa-users"></i> 750 học viên</span>
-                <span class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  4.7
-                </span>
-              </div>
-              <div class="course-price">
-                <span class="original-price">2,200,000₫</span>
-                <span class="current-price">1,690,000₫</span>
-              </div>
-              <button class="btn-course">Đăng ký ngay</button>
-            </div>
-          </div>
-
-          <!-- Course 5 -->
-          <div class="course-card">
-            <div class="course-image">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <div class="course-content">
-              <h3>React Native</h3>
-              <p>Phát triển ứng dụng di động đa nền tảng với React Native</p>
-              <div class="course-meta">
-                <span><i class="fas fa-clock"></i> 45 giờ</span>
-                <span><i class="fas fa-users"></i> 650 học viên</span>
-                <span class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  4.8
-                </span>
-              </div>
-              <div class="course-price">
-                <span class="original-price">2,900,000₫</span>
-                <span class="current-price">2,290,000₫</span>
-              </div>
-              <button class="btn-course">Đăng ký ngay</button>
-            </div>
-          </div>
-
-          <!-- Course 6 -->
-          <div class="course-card">
-            <div class="course-image">
-              <i class="fas fa-database"></i>
-            </div>
-            <div class="course-content">
-              <h3>Database & SQL</h3>
-              <p>Thiết kế và quản lý cơ sở dữ liệu chuyên nghiệp</p>
-              <div class="course-meta">
-                <span><i class="fas fa-clock"></i> 25 giờ</span>
-                <span><i class="fas fa-users"></i> 980 học viên</span>
-                <span class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  4.6
-                </span>
-              </div>
-              <div class="course-price">
-                <span class="original-price">1,800,000₫</span>
-                <span class="current-price">1,390,000₫</span>
-              </div>
-              <button class="btn-course">Đăng ký ngay</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2>Tại sao chọn TechLearn Pro?</h2>
-            <p>
-              Chúng tôi cam kết mang đến chất lượng giáo dục IT hàng đầu với đội
-              ngũ giảng viên giàu kinh nghiệm và phương pháp học tập hiệu quả.
-            </p>
-
-            <div class="features">
-              <div class="feature-item">
-                <i class="fas fa-graduation-cap"></i>
-                <div>
-                  <h4>Giảng viên chuyên nghiệp</h4>
-                  <p>Đội ngũ giảng viên có nhiều năm kinh nghiệm thực tế</p>
+            
+            <nav class="header__nav" aria-label="Menu chính">
+                <ul class="nav-list">
+                    <li><a href="index.html" aria-current="page">Trang chủ</a></li>
+                    <li><a href="courses.html">Khóa học</a></li>
+                    <li><a href="roadmaps.html">Lộ trình</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="instructors.html">Giảng viên</a></li>
+                    <li><a href="about.html">Về chúng tôi</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <form class="search-form" action="courses.html" method="get" role="search">
+                    <label for="search" class="sr-only">Tìm kiếm khóa học</label>
+                    <input type="search" id="search" name="q" placeholder="Tìm kiếm khóa học..." aria-label="Tìm kiếm khóa học">
+                    <button type="submit" aria-label="Tìm kiếm">Tìm</button>
+                </form>
+                <div class="auth-links">
+                    <a href="auth.html" class="btn btn--outline">Đăng nhập</a>
+                    <a href="auth.html" class="btn btn--primary">Đăng ký</a>
                 </div>
-              </div>
+            </div>
+        </div>
+    </header>
 
-              <div class="feature-item">
-                <i class="fas fa-laptop-code"></i>
-                <div>
-                  <h4>Thực hành thực tế</h4>
-                  <p>Học thông qua các dự án thực tế và case study</p>
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Học lập trình từ cơ bản đến nâng cao</h1>
+                <p class="hero__subtitle">Tham gia cộng đồng 100.000+ lập trình viên tại Việt Nam. Học với giảng viên chuyên nghiệp, thực hành project thực tế.</p>
+                
+                <form class="hero__search" action="courses.html" method="get" role="search">
+                    <label for="hero-search" class="sr-only">Tìm kiếm khóa học</label>
+                    <input type="search" id="hero-search" name="q" placeholder="Bạn muốn học gì? (Ví dụ: React, Python, Java...)" required>
+                    <button type="submit" class="btn btn--primary btn--large">Tìm khóa học</button>
+                </form>
+                
+                <!-- TODO: Thêm animation và styling cho hero section -->
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories" aria-labelledby="categories-heading">
+            <div class="container">
+                <h2 id="categories-heading">Danh mục khóa học</h2>
+                <nav class="categories-nav" aria-label="Danh mục khóa học">
+                    <ul class="categories-list">
+                        <li><a href="courses.html?category=frontend" aria-label="Khóa học Frontend">Frontend</a></li>
+                        <li><a href="courses.html?category=backend" aria-label="Khóa học Backend">Backend</a></li>
+                        <li><a href="courses.html?category=mobile" aria-label="Khóa học Mobile">Mobile</a></li>
+                        <li><a href="courses.html?category=devops" aria-label="Khóa học DevOps">DevOps</a></li>
+                        <li><a href="courses.html?category=data-ai" aria-label="Khóa học Data & AI">Data & AI</a></li>
+                        <li><a href="courses.html?category=basic" aria-label="Lập trình cơ bản">Lập trình cơ bản</a></li>
+                        <li><a href="courses.html?category=design" aria-label="UI/UX Design">UI/UX Design</a></li>
+                        <li><a href="courses.html?category=blockchain" aria-label="Blockchain">Blockchain</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Featured Courses Section -->
+        <section class="featured-courses" aria-labelledby="featured-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="featured-heading">Khóa học nổi bật</h2>
+                    <a href="courses.html" class="btn btn--outline">Xem tất cả khóa học</a>
                 </div>
-              </div>
+                
+                <div class="grid grid--4col">
+                    <article class="card course-card" itemscope itemtype="https://schema.org/Course">
+                        <a class="card__link" href="course-detail.html" aria-label="Xem chi tiết khóa Lập trình Java căn bản">
+                            <figure class="card__media">
+                                <img src="assets/placeholder-course.jpg" alt="Ảnh bìa khóa học Lập trình Java căn bản" loading="lazy">
+                            </figure>
+                            <div class="card__body">
+                                <h3 class="card__title" itemprop="name">Lập trình Java căn bản</h3>
+                                <p class="card__desc" itemprop="description">Học Java từ số 0: cú pháp, OOP, xử lý file, mini project.</p>
+                                <p class="card__meta">
+                                    <span class="course-card__level">Beginner</span> ·
+                                    <span class="course-card__duration">24 giờ</span> ·
+                                    <span class="course-card__students">12.540 học viên</span> ·
+                                    <span class="course-card__rating" aria-label="Đánh giá 4.8 trên 5">★ 4.8</span>
+                                </p>
+                                <p class="card__price">
+                                    <span class="course-card__price--sale">699.000đ</span>
+                                    <span class="course-card__price--old" aria-label="Giá gốc">1.299.000đ</span>
+                                </p>
+                                <span class="badge badge--pro" aria-label="Khóa học trả phí">Pro</span>
+                            </div>
+                        </a>
+                    </article>
 
-              <div class="feature-item">
-                <i class="fas fa-certificate"></i>
-                <div>
-                  <h4>Chứng chỉ uy tín</h4>
-                  <p>Nhận chứng chỉ được công nhận trong ngành</p>
+                    <article class="card course-card" itemscope itemtype="https://schema.org/Course">
+                        <a class="card__link" href="course-detail.html" aria-label="Xem chi tiết khóa React.js từ A-Z">
+                            <figure class="card__media">
+                                <img src="assets/placeholder-course.jpg" alt="Ảnh bìa khóa học React.js từ A-Z" loading="lazy">
+                            </figure>
+                            <div class="card__body">
+                                <h3 class="card__title" itemprop="name">React.js từ A-Z</h3>
+                                <p class="card__desc" itemprop="description">Xây dựng ứng dụng web hiện đại với React, Hooks, Redux, Next.js.</p>
+                                <p class="card__meta">
+                                    <span class="course-card__level">Intermediate</span> ·
+                                    <span class="course-card__duration">32 giờ</span> ·
+                                    <span class="course-card__students">8.920 học viên</span> ·
+                                    <span class="course-card__rating" aria-label="Đánh giá 4.9 trên 5">★ 4.9</span>
+                                </p>
+                                <p class="card__price">
+                                    <span class="course-card__price--sale">899.000đ</span>
+                                    <span class="course-card__price--old" aria-label="Giá gốc">1.599.000đ</span>
+                                </p>
+                                <span class="badge badge--pro" aria-label="Khóa học trả phí">Pro</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="card course-card" itemscope itemtype="https://schema.org/Course">
+                        <a class="card__link" href="course-detail.html" aria-label="Xem chi tiết khóa Python cho người mới bắt đầu">
+                            <figure class="card__media">
+                                <img src="assets/placeholder-course.jpg" alt="Ảnh bìa khóa học Python cho người mới bắt đầu" loading="lazy">
+                            </figure>
+                            <div class="card__body">
+                                <h3 class="card__title" itemprop="name">Python cho người mới bắt đầu</h3>
+                                <p class="card__desc" itemprop="description">Ngôn ngữ lập trình đơn giản, mạnh mẽ. Học từ cú pháp cơ bản đến thư viện.</p>
+                                <p class="card__meta">
+                                    <span class="course-card__level">Beginner</span> ·
+                                    <span class="course-card__duration">18 giờ</span> ·
+                                    <span class="course-card__students">15.230 học viên</span> ·
+                                    <span class="course-card__rating" aria-label="Đánh giá 4.7 trên 5">★ 4.7</span>
+                                </p>
+                                <p class="card__price">
+                                    <span class="course-card__price--free">Miễn phí</span>
+                                </p>
+                                <span class="badge badge--free" aria-label="Khóa học miễn phí">Miễn phí</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="card course-card" itemscope itemtype="https://schema.org/Course">
+                        <a class="card__link" href="course-detail.html" aria-label="Xem chi tiết khóa Node.js & Express.js">
+                            <figure class="card__media">
+                                <img src="assets/placeholder-course.jpg" alt="Ảnh bìa khóa học Node.js & Express.js" loading="lazy">
+                            </figure>
+                            <div class="card__body">
+                                <h3 class="card__title" itemprop="name">Node.js & Express.js</h3>
+                                <p class="card__desc" itemprop="description">Xây dựng API và ứng dụng web với JavaScript phía server.</p>
+                                <p class="card__meta">
+                                    <span class="course-card__level">Intermediate</span> ·
+                                    <span class="course-card__duration">28 giờ</span> ·
+                                    <span class="course-card__students">6.750 học viên</span> ·
+                                    <span class="course-card__rating" aria-label="Đánh giá 4.8 trên 5">★ 4.8</span>
+                                </p>
+                                <p class="card__price">
+                                    <span class="course-card__price--sale">799.000đ</span>
+                                    <span class="course-card__price--old" aria-label="Giá gốc">1.399.000đ</span>
+                                </p>
+                                <span class="badge badge--pro" aria-label="Khóa học trả phí">Pro</span>
+                            </div>
+                        </a>
+                    </article>
                 </div>
-              </div>
+                
+                <!-- TODO: Thêm lazy loading và infinite scroll cho danh sách khóa học -->
             </div>
-          </div>
+        </section>
 
-          <div class="about-image">
-            <div class="image-placeholder">
-              <i class="fas fa-code"></i>
+        <!-- Learning Paths Section -->
+        <section class="learning-paths" aria-labelledby="paths-heading">
+            <div class="container">
+                <h2 id="paths-heading">Lộ trình học tập</h2>
+                <p class="section-subtitle">Chọn lộ trình phù hợp với mục tiêu nghề nghiệp của bạn</p>
+                
+                <div class="grid grid--2col">
+                    <article class="path-card">
+                        <h3>Frontend Developer</h3>
+                        <p>Từ zero đến job-ready trong 6 tháng</p>
+                        <ul>
+                            <li>HTML, CSS, JavaScript cơ bản</li>
+                            <li>React.js, Vue.js</li>
+                            <li>TypeScript, Testing</li>
+                            <li>Build tools, Deployment</li>
+                        </ul>
+                        <a href="roadmaps.html" class="btn btn--primary">Bắt đầu lộ trình</a>
+                    </article>
+
+                    <article class="path-card">
+                        <h3>Backend Developer</h3>
+                        <p>Trở thành Backend Developer chuyên nghiệp</p>
+                        <ul>
+                            <li>Java, Spring Boot</li>
+                            <li>Database, SQL</li>
+                            <li>RESTful API, Microservices</li>
+                            <li>Docker, Cloud</li>
+                        </ul>
+                        <a href="roadmaps.html" class="btn btn--primary">Bắt đầu lộ trình</a>
+                    </article>
+
+                    <article class="path-card">
+                        <h3>Data Analyst</h3>
+                        <p>Phân tích dữ liệu với Python và SQL</p>
+                        <ul>
+                            <li>Python cơ bản</li>
+                            <li>Pandas, NumPy</li>
+                            <li>SQL, Database</li>
+                            <li>Visualization, Machine Learning</li>
+                        </ul>
+                        <a href="roadmaps.html" class="btn btn--primary">Bắt đầu lộ trình</a>
+                    </article>
+
+                    <article class="path-card">
+                        <h3>Full-stack Developer</h3>
+                        <p>Làm chủ cả Frontend và Backend</p>
+                        <ul>
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>React.js, Node.js</li>
+                            <li>Database, API</li>
+                            <li>DevOps, Deployment</li>
+                        </ul>
+                        <a href="roadmaps.html" class="btn btn--primary">Bắt đầu lộ trình</a>
+                    </article>
+                </div>
             </div>
-          </div>
+        </section>
+
+        <!-- Featured Instructors Section -->
+        <section class="featured-instructors" aria-labelledby="instructors-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="instructors-heading">Giảng viên tiêu biểu</h2>
+                    <a href="instructors.html" class="btn btn--outline">Xem tất cả giảng viên</a>
+                </div>
+                
+                <div class="grid grid--3col">
+                    <article class="instructor-card">
+                        <figure class="instructor-card__avatar">
+                            <img src="assets/placeholder-course.jpg" alt="Ảnh đại diện giảng viên Nguyễn Văn A" loading="lazy">
+                        </figure>
+                        <div class="instructor-card__info">
+                            <h3>Nguyễn Văn A</h3>
+                            <p class="instructor-card__title">Senior Frontend Developer tại Google</p>
+                            <p class="instructor-card__desc">5+ năm kinh nghiệm với React, Vue.js. Đã đào tạo hơn 10.000 học viên.</p>
+                            <a href="instructors.html" class="btn btn--outline btn--small">Xem khóa học</a>
+                        </div>
+                    </article>
+
+                    <article class="instructor-card">
+                        <figure class="instructor-card__avatar">
+                            <img src="assets/placeholder-course.jpg" alt="Ảnh đại diện giảng viên Trần Thị B" loading="lazy">
+                        </figure>
+                        <div class="instructor-card__info">
+                            <h3>Trần Thị B</h3>
+                            <p class="instructor-card__title">Lead Backend Developer tại Shopee</p>
+                            <p class="instructor-card__desc">Chuyên gia Java, Spring Boot. 7+ năm kinh nghiệm xây dựng hệ thống lớn.</p>
+                            <a href="instructors.html" class="btn btn--outline btn--small">Xem khóa học</a>
+                        </div>
+                    </article>
+
+                    <article class="instructor-card">
+                        <figure class="instructor-card__avatar">
+                            <img src="assets/placeholder-course.jpg" alt="Ảnh đại diện giảng viên Lê Văn C" loading="lazy">
+                        </figure>
+                        <div class="instructor-card__info">
+                            <h3>Lê Văn C</h3>
+                            <p class="instructor-card__title">Data Scientist tại VinAI</p>
+                            <p class="instructor-card__desc">Chuyên gia Python, Machine Learning. Nghiên cứu và ứng dụng AI trong thực tế.</p>
+                            <a href="instructors.html" class="btn btn--outline btn--small">Xem khóa học</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <h2 id="testimonials-heading">Cảm nhận của học viên</h2>
+                
+                <div class="grid grid--3col">
+                    <blockquote class="testimonial">
+                        <p>"Khóa học React của thầy A rất hay và dễ hiểu. Sau 3 tháng học, mình đã tự tin apply và được nhận vào công ty tech lớn."</p>
+                        <cite>
+                            <strong>Phạm Thị D</strong>
+                            <span>Frontend Developer tại FPT</span>
+                        </cite>
+                    </blockquote>
+
+                    <blockquote class="testimonial">
+                        <p>"Lộ trình học rất rõ ràng, từ cơ bản đến nâng cao. Giảng viên nhiệt tình, support tốt. Mình recommend cho ai muốn học lập trình."</p>
+                        <cite>
+                            <strong>Hoàng Văn E</strong>
+                            <span>Full-stack Developer tại Viettel</span>
+                        </cite>
+                    </blockquote>
+
+                    <blockquote class="testimonial">
+                        <p>"Học phí hợp lý, chất lượng tốt. Mình đã học được nhiều kỹ năng thực tế, không chỉ lý thuyết. Cảm ơn Thuần Lại Lập Trình!"</p>
+                        <cite>
+                            <strong>Nguyễn Thị F</strong>
+                            <span>Backend Developer tại VNPay</span>
+                        </cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter" aria-labelledby="newsletter-heading">
+            <div class="container">
+                <h2 id="newsletter-heading">Đăng ký nhận tin</h2>
+                <p>Nhận thông tin về khóa học mới, tips lập trình và cơ hội việc làm</p>
+                
+                <form class="newsletter-form" action="#" method="post">
+                    <label for="newsletter-email" class="sr-only">Email đăng ký nhận tin</label>
+                    <input type="email" id="newsletter-email" name="email" placeholder="Nhập email của bạn" required>
+                    <button type="submit" class="btn btn--primary">Đăng ký</button>
+                </form>
+                
+                <!-- TODO: Thêm validation và xử lý form subscription -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" itemscope itemtype="https://schema.org/Organization">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 itemprop="name">Thuần Lại Lập Trình</h3>
+                    <p itemprop="description">Nền tảng học lập trình trực tuyến hàng đầu Việt Nam</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" rel="noopener">Facebook</a>
+                        <a href="#" aria-label="YouTube" rel="noopener">YouTube</a>
+                        <a href="#" aria-label="LinkedIn" rel="noopener">LinkedIn</a>
+                        <a href="#" aria-label="GitHub" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+                
+                <nav class="footer__nav" aria-label="Liên kết nhanh">
+                    <div class="footer__nav-group">
+                        <h4>Khóa học</h4>
+                        <ul>
+                            <li><a href="courses.html?category=frontend">Frontend</a></li>
+                            <li><a href="courses.html?category=backend">Backend</a></li>
+                            <li><a href="courses.html?category=mobile">Mobile</a></li>
+                            <li><a href="courses.html?category=devops">DevOps</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__nav-group">
+                        <h4>Hỗ trợ</h4>
+                        <ul>
+                            <li><a href="contact.html">Liên hệ</a></li>
+                            <li><a href="help.html">Trung tâm trợ giúp</a></li>
+                            <li><a href="faq.html">Câu hỏi thường gặp</a></li>
+                            <li><a href="community.html">Cộng đồng</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__nav-group">
+                        <h4>Công ty</h4>
+                        <ul>
+                            <li><a href="about.html">Về chúng tôi</a></li>
+                            <li><a href="instructors.html">Giảng viên</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="careers.html">Tuyển dụng</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__legal">
+                    <p>&copy; 2024 Thuần Lại Lập Trình. Tất cả quyền được bảo lưu.</p>
+                    <nav aria-label="Liên kết pháp lý">
+                        <a href="terms.html">Điều khoản sử dụng</a>
+                        <a href="privacy.html">Chính sách bảo mật</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Liên hệ với chúng tôi</h2>
-          <p class="section-subtitle">
-            Sẵn sàng hỗ trợ bạn trên con đường học tập
-          </p>
-        </div>
-
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <h4>Địa chỉ</h4>
-                <p>123 Nguyễn Huệ, Quận 1, TP.HCM</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <div>
-                <h4>Hotline</h4>
-                <p>0123 456 789</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <h4>Email</h4>
-                <p>info@techlearnpro.com</p>
-              </div>
-            </div>
-          </div>
-
-          <form class="contact-form">
-            <div class="form-group">
-              <input type="text" placeholder="Họ và tên" required />
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Email" required />
-            </div>
-            <div class="form-group">
-              <input type="tel" placeholder="Số điện thoại" required />
-            </div>
-            <div class="form-group">
-              <textarea placeholder="Tin nhắn" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">
-              <i class="fas fa-paper-plane"></i>
-              Gửi tin nhắn
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <div class="footer-logo">
-              <i class="fas fa-code"></i>
-              <span>TechLearn Pro</span>
-            </div>
-            <p>Nền tảng học tập IT hàng đầu Việt Nam</p>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-
-          <div class="footer-section">
-            <h4>Khóa học</h4>
-            <ul>
-              <li><a href="#">JavaScript</a></li>
-              <li><a href="#">React.js</a></li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">Node.js</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
-            <h4>Hỗ trợ</h4>
-            <ul>
-              <li><a href="#">Trung tâm trợ giúp</a></li>
-              <li><a href="#">Chính sách</a></li>
-              <li><a href="#">Điều khoản</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-section">
-            <h4>Liên hệ</h4>
-            <ul>
-              <li><i class="fas fa-phone"></i> 0123 456 789</li>
-              <li><i class="fas fa-envelope"></i> info@techlearnpro.com</li>
-              <li><i class="fas fa-map-marker-alt"></i> TP.HCM, Việt Nam</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>&copy; 2025 TechLearn Pro. Tất cả quyền được bảo lưu.</p>
-        </div>
-      </div>
     </footer>
-
-    <!-- AI Chat Bot -->
-    <div id="chat-bot-container">
-      <button id="chat-bot-toggle" class="chat-bot-toggle">
-        <i class="fas fa-robot"></i>
-        <span class="chat-notification">1</span>
-      </button>
-
-      <div id="chat-window" class="chat-window">
-        <div class="chat-header">
-          <div class="chat-bot-info">
-            <div class="bot-avatar">
-              <i class="fas fa-robot"></i>
-            </div>
-            <div class="bot-details">
-              <h4>AI Assistant</h4>
-              <span class="bot-status">
-                <span class="status-dot"></span>
-                Đang hoạt động
-              </span>
-            </div>
-          </div>
-          <button id="chat-close" class="chat-close">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-
-        <div class="chat-messages" id="chat-messages">
-          <div class="message bot-message">
-            <div class="message-avatar">
-              <i class="fas fa-robot"></i>
-            </div>
-            <div class="message-content">
-              <p>
-                Xin chào! Tôi là AI Assistant của TechLearn Pro. Tôi có thể giúp
-                bạn tìm hiểu về các khóa học, tư vấn lộ trình học tập và trả lời
-                các câu hỏi về IT. Bạn cần hỗ trợ gì?
-              </p>
-              <span class="message-time">Bây giờ</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="chat-input-container">
-          <div class="typing-indicator" id="typing-indicator">
-            <div class="typing-dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <span>AI đang nhập...</span>
-          </div>
-          <div class="chat-input-wrapper">
-            <input
-              type="text"
-              id="chat-input"
-              placeholder="Nhập tin nhắn của bạn..."
-              autocomplete="off"
-            />
-            <button id="chat-send" class="chat-send">
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
